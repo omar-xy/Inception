@@ -9,4 +9,5 @@ server {
 
     ssl_protocols TLSv1.2 TLSv1.3;
     root /var/www/html;
+    error_log /var/log/nginx/error.log;
 }

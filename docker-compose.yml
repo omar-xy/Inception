@@ -1,0 +1,26 @@
+services:
+
+  nginx:
+    volumes:
+        
+    networks:
+      - Inception
+    ports:
+      - 443:443
+    restart: always
+    env_file:
+      - .env
+
+  wordpress:
+    volumes:
+      - wp_data:/var/www/html
+    networks:
+      - Inception
+    restart: always
+    env_file:
+      - .env
+volumes:
+  db_data:
+  wp_data:
+networks:
+  Incetion:
