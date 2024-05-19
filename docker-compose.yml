@@ -1,26 +1,34 @@
-services:
+version: '3.8'
 
+services:
   nginx:
     volumes:
-        
+        - wp_data:/var/www/html
     networks:
       - Inception
     ports:
       - 443:443
-    restart: always
     env_file:
       - .env
-
+    restart: always
   wordpress:
     volumes:
       - wp_data:/var/www/html
     networks:
       - Inception
-    restart: always
     env_file:
       - .env
-volumes:
+    restart: always
+volumes:    
   db_data:
+    driver: ~/Descktop/
   wp_data:
+    driver: ~/Descktop/
 networks:
-  Incetion:
+  Inception:
+  ipam:
+    driver: default
+    config:
+      - subnet: "192.168.92.21"
+
+    
