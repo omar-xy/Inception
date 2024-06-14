@@ -1,17 +1,17 @@
 #!/bin/bash
 
-service mysql start;
+touch init.sql
 
-mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
+echo "CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;" > init.sql
 
-mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
+echo "CREATE USER IF NOT EXISTS \`${MYSQL_USER}\`@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"  >> init.sql
 
-mysql -e "GRANT ALL PRIVILEGES ON \`${SQL_DATABASE}\`.* TO \`${SQL_USER}\`@'%' IDENTIFIED BY '${SQL_PASSWORD}';"
+echo "GRANT ALL PRIVILEGES ON \`${MYSQL_DATABASE}\`.* TO \`${MYSQL_USER}\`@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"  >> init.sql
 
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
+echo "ALTER USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';"  >> init.sql
 
-mysql -e "FLUSH PRIVILEGES;"
+echo "FLUSH PRIVILEGES;"  >> init.sql
 
-mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
+mkdir -p /run/mysqld
 
-exec mysqld_safe
+exec "mysqld"

@@ -2,8 +2,12 @@ version: '3.8'
 
 services:
   nginx:
+    build:
+      context: "./requirement/nginx"
+    depends_on:
+      - wordpress
     volumes:
-        - wp_data:/var/www/html
+      - wp_data:/var/www/html
     networks:
       - Inception
     ports:
@@ -12,6 +16,8 @@ services:
       - .env
     restart: always
   wordpress:
+    build:
+      context: "./requirement/wordpress"
     volumes:
       - wp_data:/var/www/html
     networks:
@@ -19,16 +25,46 @@ services:
     env_file:
       - .env
     restart: always
-volumes:    
+    depends_on:
+      - mariadb
+      - redis
+  mariadb:
+    build:
+      context: "./requirement/MariaDB"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - Inception
+    env_file:
+      - .env
+    restart: always
+  redis:
+    build:
+      context: "./requirement/bonus/redis"
+    networks:
+      - Inception
+    env_file:
+      - .env
+    restart: always
+
+volumes:
   db_data:
-    driver: ~/Descktop/
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/otaraki/data/mariadb
+      o: bind
   wp_data:
-    driver: ~/Descktop/
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/otaraki/data/wordpress
+
+
+
 networks:
   Inception:
-  ipam:
-    driver: default
-    config:
-      - subnet: "192.168.92.21"
-
-    
+    ipam:
+      driver: default
+      # config:
+      #   - subnet: "192.168.92.21"
