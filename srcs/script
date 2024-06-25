@@ -1,0 +1,38 @@
+#/bin/bash -c 'arch -arch x86_64 '/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Resources/darwin-debug' --unix-socket=/tmp/xp02sc --arch=x86_64 --working-dir '/Users/otaraki/Desktop/main_mini/.vscode' --disable-aslr --env='OS_ACTIVITY_DT_MODE=enable' --  '/Users/otaraki/Desktop/main_mini/Minishell' ; echo Process exited with status 0 ; exit';exit
+
+# This script prunes all unused Docker files, including images, containers, volumes, and networks.
+
+echo Starting Docker prune script...
+
+# Stop all running containers
+echo Stopping all running containers...
+docker stop 
+
+# Remove all stopped containers
+echo Removing all stopped containers...
+docker container prune -f
+
+# Remove all unused images
+echo Removing all unused images...
+docker image prune -a -f
+
+# Remove all unused volumes
+echo Removing all unused volumes...
+docker volume prune -f
+
+# Remove all unused networks
+echo Removing all unused networks...
+docker network prune -f
+
+# Optionally, remove all dangling build cache
+echo Removing all dangling build cache...
+docker builder prune -f
+
+echo Docker prune script completed.
+
+# Display remaining Docker resources
+echo Remaining Docker resources:
+docker system df
+
+echo Script execution finished.
+

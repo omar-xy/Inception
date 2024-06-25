@@ -1,4 +1,27 @@
-version: '3.8'
+
+
+networks:
+  Inception:
+    ipam:
+      driver: default
+      # config:
+      #   - subnet: "192.168.92.21"
+
+
+volumes:
+  db_data:
+    driver: local
+    driver_opts:
+      # type: none
+      device: "/home/omar/Data/mariadbData"
+    #   o: bind
+  wp_data:
+    driver: local
+    driver_opts:
+      # type: none
+      device: "/home/omar/Data/wordpressData"
+      # o: bind
+  
 
 services:
   nginx:
@@ -47,24 +70,4 @@ services:
       - .env
     restart: always
 
-volumes:
-  db_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/otaraki/data/mariadb
-      o: bind
-  wp_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/otaraki/data/wordpress
 
-
-
-networks:
-  Inception:
-    ipam:
-      driver: default
-      # config:
-      #   - subnet: "192.168.92.21"
