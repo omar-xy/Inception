@@ -1,9 +1,13 @@
 
 server {
     listen 443 ssl;
+
     ssl_certificate /etc/ssl/certs/server.crt;
     ssl_certificate_key /etc/ssl/private/server.key;
 	ssl_protocols TLSv1.2 TLSv1.3;
+    
+    server_name _ 10.13.100.78;
+
     root /var/www/html;
 	index index.php;
 
@@ -13,5 +17,5 @@ server {
         fastcgi_index index.php;
 		include fastcgi.conf;
     }
-    server_name _;
+    
 }

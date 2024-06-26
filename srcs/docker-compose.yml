@@ -2,24 +2,24 @@
 
 networks:
   Inception:
-    ipam:
-      driver: default
+    # ipam:
+      # driver: default
       # config:
       #   - subnet: "192.168.92.21"
 
 
 volumes:
   db_data:
-    driver: local
-    driver_opts:
+    # driver: local
+    # driver_opts:
       # type: none
-      device: "/home/omar/Data/mariadbData"
+      # device: "/home/omar/Data/mariadbData"
     #   o: bind
   wp_data:
-    driver: local
-    driver_opts:
+    # driver: local
+    # driver_opts:
       # type: none
-      device: "/home/omar/Data/wordpressData"
+      # device: "/home/omar/Data/wordpressData"
       # o: bind
   
 
