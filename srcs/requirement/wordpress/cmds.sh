@@ -31,5 +31,6 @@ wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
 
 mkdir -p /run/php
+
 exec php-fpm7.4 -F
 
