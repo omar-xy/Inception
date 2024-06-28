@@ -11,15 +11,15 @@ networks:
 volumes:
   db_data:
     driver: local
-    driver_opts:
+    # driver_opts:
       # type: none
-      device: "/home/omar/Data/mariadbData"
+      # device: "/home/omar/Data/mariadbData"
     #   o: bind
   wp_data:
     driver: local
-    driver_opts:
+    # driver_opts:
       # type: none
-      device: "/home/omar/Data/wordpressData"
+      # device: "/home/omar/Data/wordpressData"
       # o: bind
   
 
