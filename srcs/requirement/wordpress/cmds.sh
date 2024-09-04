@@ -21,9 +21,12 @@ wp config set WP_REDIS_PORT $REDIS_PORT --allow-root
 
 chmod 600 wp-config.php
 
+
+chmod 776 -R /var/www/html
+
 chown -R www-data:www-data /var/www/html
 
-wp core install --url=10.13.100.78 --title=wordpress --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL --allow-root
+wp core install --url=localhost --title=wordpress --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL --allow-root
 
 wp user create $WP_USER $WP_EMAIL --role=author --user_pass=$WP_PASSWORD --allow-root
 

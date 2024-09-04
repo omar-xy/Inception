@@ -6,7 +6,7 @@ server {
     ssl_certificate_key /etc/ssl/private/server.key;
 	ssl_protocols TLSv1.2 TLSv1.3;
     
-    server_name _ 10.13.100.78;
+    server_name _ localhost;
 
     root /var/www/html;
 	index index.php;
@@ -16,6 +16,10 @@ server {
         fastcgi_pass wordpress:9000;
         fastcgi_index index.php;
 		include fastcgi.conf;
+    }
+
+    location /adminer {
+        proxy_pass http://adminer:8000;
     }
     
 }

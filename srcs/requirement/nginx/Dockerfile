@@ -7,8 +7,8 @@ RUN     apt update && apt -y install nginx && apt install -y openssl && openssl 
 
 # copy the default configuration into the container
 COPY    ./default /etc/nginx/sites-available/default
-RUN     chmod 755 /var/www/html
-RUN     chown -R www-data:www-data /var/www/html
+# RUN     chmod 755 /var/www/html
+# RUN     chown -R www-data:www-data /var/www/html
 
 EXPOSE 443
 
