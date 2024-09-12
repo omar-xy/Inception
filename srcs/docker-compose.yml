@@ -69,12 +69,12 @@ services:
     env_file:
       - .env
     restart: always
-  adminer:
-    build:
-      context: "./requirement/bonus/adminer"
-    networks:
-      - Inception
-    env_file:
-      - .env
-    restart: always
+  # adminer:
+  #   build:
+  #     context: "./requirement/bonus/adminer"
+  #   networks:
+  #     - Inception
+  #   env_file:
+  #     - .env
+  #   restart: always
 

@@ -10,4 +10,4 @@ RUN chmod +x /usr/local/bin/cmds.sh
 
 EXPOSE 3306
 
-CMD ["/usr/local/bin/cmds.sh"]
+ENTRYPOINT ["/usr/local/bin/cmds.sh"]
