@@ -6,9 +6,19 @@ RUN apt-get update && apt-get install -y \
 
 RUN /etc/init.d/vsftpd stop
 
-COPY ./init-ftp.sh /etc/service/vsftpd
+# RUN mkdir -p /var/run/vsftpd/empty \
+#  && mkdir -p /etc/vsftpd \
+#  && mkdir -p /var/ftp \
+#  && mv /etc/vsftpd.conf /etc/vsftpd.orig \
+#  && mkdir /etc/service/vsftpd
+
+COPY ./init-ftp.sh /exc
+
+
+RUN chmod -R +x /exc
 
 EXPOSE 20-21
 EXPOSE 65500-65515
 
-ENTRYPOINT [ "sh", "./etc/service/vsftpd" ]
+
+ENTRYPOINT [ "sh", "/exc/init-ftp.sh" ]

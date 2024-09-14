@@ -2,7 +2,6 @@
 #!/bin/bash
 
 set -e
-source /etc/container_environment.sh
 
 ANON_ROOT=${ANON_ROOT:-/var/ftp}
 PASV_MAX_PORT=${PASV_MAX_PORT:-65515}
