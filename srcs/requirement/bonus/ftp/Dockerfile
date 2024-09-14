@@ -18,8 +18,7 @@ RUN chown -R root:root /exc
 EXPOSE 20-21
 
 EXPOSE 65500-65515
-WORKDIR /exc
 
-ENTRYPOINT ["/usr/sbin/vsftpd", "/etc/vsftpd.conf"]
+WORKDIR /exc
 
 CMD [ "sh", "./init-ftp.sh" ]

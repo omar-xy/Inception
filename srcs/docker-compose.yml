@@ -82,3 +82,13 @@ services:
     env_file:
       - .env
     restart: always
+  static_website:
+    build:
+      context: "./requirement/bonus/static_website"
+    volumes:
+      - wp_data:/var/www/html
+    networks:
+      - Inception
+    env_file:
+      - .env
+    restart: always
