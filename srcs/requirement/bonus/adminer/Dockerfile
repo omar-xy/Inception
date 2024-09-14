@@ -1,10 +1,14 @@
 FROM debian:bullseye
 
-RUN apt update -y && apt install wget && apt install php php-mysqli -y
+RUN apt-get update && apt-get install -y wget \
+    php \
+    php-mysql
+    # libapache2
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
-RUN wget --no-check-certificate  -O adminer.php https://www.adminer.org/latest.php && \
-    mv adminer.php index.php && chown -R root:root /var/www/
+RUN wget --no-check-certificate  -O adminer.php https://www.adminer.org/latest.php 
+# chown -R root:root /var/www/html && \ 
+# chmod 775 root:root /var/www/html
 
-ENTRYPOINT  ["PHP", "-S",  "0.0.0.0:8000"]
+CMD  ["php", "-S",  "0.0.0.0:8000", "-t", "/var/www/html", "/var/www/html/adminer.php"]
