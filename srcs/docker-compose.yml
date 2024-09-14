@@ -2,10 +2,7 @@
 
 networks:
   Inception:
-    # ipam:
-      # driver: default
-      # config:
-      #   - subnet: "192.168.92.21"
+
 
 
 volumes:
@@ -21,7 +18,7 @@ volumes:
       # type: none
       # device: "/home/omar/Data/wordpressData"
       # o: bind
-  
+
 
 services:
   nginx:
@@ -85,4 +82,3 @@ services:
     env_file:
       - .env
     restart: always
-

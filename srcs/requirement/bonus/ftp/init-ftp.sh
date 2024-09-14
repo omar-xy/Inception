@@ -17,8 +17,9 @@ HIDE_FILE=${HIDE_FILE:-""}
 DENY_FILE=${DENY_FILE:-""}
 
 
-[ -f /etc/vsftpd.conf ] || cat <<EOF > /etc/vsftpd.conf
+cat <<EOF > /etc/vsftpd.conf
 listen=YES
+listen_port=2211
 anonymous_enable=YES
 dirmessage_enable=YES
 use_localtime=YES

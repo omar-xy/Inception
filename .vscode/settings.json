@@ -1,3 +1,130 @@
+
 {
-    "DockerRun.DisableDockerrc": true
+    "DockerRun.DisableDockerrc": true,
+    // Editor Settings
+    "editor.minimap.enabled": false, // Disables the minimap in the editor, which provides a high-level overview of your code.
+    "editor.minimap.renderCharacters": false,
+    "editor.copyWithSyntaxHighlighting": false, // Disables copying with syntax highlighting. When false, copied text will not include syntax highlighting.
+    "editor.emptySelectionClipboard": false, // Prevents copying the content of an empty selection to the clipboard.
+    "editor.multiCursorModifier": "ctrlCmd", // Sets the modifier key for multi-cursor operations. Can be "alt" or "ctrlCmd" (Cmd on macOS, Ctrl on other platforms).
+    "editor.snippetSuggestions": "top", // Determines where snippet suggestions appear in the suggestions list. "top" shows them at the top.
+    "editor.detectIndentation": false, // Disables automatic detection of indentation settings based on the file content.
+    "editor.guides.indentation": false, // Disables the indentation guides in the editor.
+    "editor.hover.delay": 500, // Sets the delay in milliseconds before the hover information appears.
+    "editor.hover.enabled": true, // Enables hover information that appears when you hover over code elements.
+    "editor.matchBrackets": "never", // Disables bracket matching highlighting.
+    "editor.colorDecorators": false, // Disables color decorators which highlight colors in the code.
+    "editor.selectionHighlight": true, // Disables highlighting of text occurrences that are selected.
+    "editor.renderLineHighlight": "none", // Disables highlighting of the line the cursor is on.
+    "editor.occurrencesHighlight": "off", // Disables highlighting of occurrences of the selected text.
+    "editor.renderControlCharacters": false, // Disables rendering of control characters in the editor.
+    "editor.overviewRulerBorder": false, // Hides the border around the overview ruler.
+    "editor.hideCursorInOverviewRuler": true, // Hides the cursor in the overview ruler (mini-map).
+    "editor.gotoLocation.multipleReferences": "goto", // Specifies the behavior when multiple references are found. "goto" will navigate to the location.
+    "editor.gotoLocation.multipleDefinitions": "goto", // Specifies the behavior when multiple definitions are found. "goto" will navigate to the location.
+    "editor.gotoLocation.multipleDeclarations": "goto", // Specifies the behavior when multiple declarations are found. "goto" will navigate to the location.
+    "editor.gotoLocation.multipleImplementations": "goto", // Specifies the behavior when multiple implementations are found. "goto" will navigate to the location.
+    "editor.gotoLocation.multipleTypeDefinitions": "goto", // Specifies the behavior when multiple type definitions are found. "goto" will navigate to the location.
+    "editor.fontFamily": "MesloLGS NF, Geist Mono, JetBrains Mono, Fira Code", // Sets the font family for the editor. A fallback order is provided if the first font is not available.
+    "editor.fontSize": 13,
+    "editor.suggestFontSize": 12, // Sets the font size for the suggestion list in the editor.
+    "editor.suggestLineHeight": 20, // Sets the line height for the suggestion list in the editor.
+    "editor.renderWhitespace": "trailing",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.cursorStyle": "underline",
+    "editor.cursorBlinking": "smooth",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.stickyScroll.enabled": false,
+
+
+    // Terminal Settings
+    "terminal.integrated.fontFamily": "MesloLGS NF, Geist Mono, JetBrains Mono, Fira Code",
+    "terminal.integrated.lineHeight": 1.5, // Sets the line height in the integrated terminal.
+    "terminal.integrated.fontSize": 13, // Sets the font size in the integrated terminal.
+    "workbench.colorCustomizations": {
+        "terminal.foreground": "#ebdbb2",
+        // "terminal.background": "#101215", // terminal color -> 181921
+        "terminalCursor.foreground": "#ffffff",
+        "terminalCursor.background": "#c7c7c7",
+        "terminal.selectionForeground": "#928374",
+        "terminal.selectionBackground": "#ebdbb2",
+        "terminal.ansiBlack": "#1d2021",
+        "terminal.ansiBrightBlack": "#928374",
+        "terminal.ansiRed": "#f20a02", // terminal color -> cc241d
+        "terminal.ansiBrightRed": "#f42c3e",
+        "terminal.ansiGreen": "#98971a",
+        "terminal.ansiBrightGreen": "#b8bb26",
+        "terminal.ansiYellow": "#d79921",
+        "terminal.ansiBrightYellow": "#fabd2f",
+        "terminal.ansiBlue": "#335d5f", // terminal color -> 458588
+        "terminal.ansiBrightBlue": "#99c6ca",
+        "terminal.ansiMagenta": "#b16286",
+        "terminal.ansiBrightMagenta": "#d3869b",
+        "terminal.ansiCyan": "#689d6a",
+        "terminal.ansiBrightCyan": "#7ec16e",
+        "terminal.ansiWhite": "#a89984",
+        "terminal.ansiBrightWhite": "#ebdbb2",
+    },
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.rightClickBehavior": "default", // Hides the status bar at the bottom of the window.
+
+
+    "workbench.activityBar.location": "bottom", // Positions the activity bar (which contains icons for switching views) at the bottom of the window.
+    "workbench.sideBar.location": "right", // Disables the preview mode for editors. If enabled, files are opened in preview mode until edited.
+    "workbench.editor.showTabs": "none", // Hides the editor tabs (if set to "none").
+    "workbench.layoutControl.enabled": false, // Disables the layout control, which allows you to toggle between different layout configurations.
+    "workbench.tips.enabled": false, // Disables the display of tips at startup.
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "workbench.iconTheme": "symbols",
+
+
+    //  SCM Settings
+    "scm.diffDecorations": "none", // Disables diff decorations in the source control view.
+    "git.decorations.enabled": false, // Disables Git decorations in the editor, such as changes indicators.
+
+
+    //  Files Settings
+    "files.trimTrailingWhitespace": true, // Automatically trims whitespace at the end of lines when saving a file.
+    "files.insertFinalNewline": true, // Ensures that a newline character is inserted at the end of files when saving.
+    "files.trimFinalNewlines": true, // Automatically trims any extra newlines at the end of files when saving.
+    "files.autoSave": "afterDelay", // Sets the auto-save behavior to save files after a delay.
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": true,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    },
+
+
+    //  Window Settings
+    "window.nativeFullScreen": true, // Enables native full-screen mode, which makes VS Code take over the entire screen.
+    "window.commandCenter": false, // Disables the command center in the window, which shows the command palette.
+    "window.newWindowDimensions": "inherit", // Sets the size of new windows to be the same as the last opened window.
+    "window.density.editorTabHeight": "compact",
+
+
+    // Custom CSS/JS Settings (commented out)
+    "vscode_custom_css.imports": // These settings would allow for custom CSS and JS to be loaded into VS Code.
+    [
+        // "file:///Users/$USER/custom-vscode.css",
+        // "file:///Users/$USER/vscode-script.js"
+    ],
+    "redhat.telemetry.enabled": false,
+    "symbols.hidesExplorerArrows": true,
+    "workbench.statusBar.visible": false,
+    "explorer.confirmDelete": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.editor.enablePreview": false,
+    "makefile.configureOnOpen": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.env.osx": {},
+    "terminal.integrated.env.linux": {},
 }
