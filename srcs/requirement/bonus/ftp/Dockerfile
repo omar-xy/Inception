@@ -1,24 +1,15 @@
-FROM debian:stable
+FROM debian:buster
 
-RUN apt-get update && apt-get install -y \
-    vsftpd \
-    wget
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y vsftpd
 
-RUN /etc/init.d/vsftpd stop
 
-RUN mkdir -p /exc
+COPY  ./tools/init-ftp.sh /usr/local/bin
 
-COPY ./init-ftp.sh /exc
 
-RUN chmod 775 -R /exc
-RUN chmod 775  /etc/vsftpd.conf
 
-RUN chown -R root:root /exc
 
-EXPOSE 20-21
+ENTRYPOINT [ "/usr/local/bin/init-ftp.sh" ]
 
-EXPOSE 65500-65515
-
-WORKDIR /exc
-
-CMD [ "sh", "./init-ftp.sh" ]
+# CMD ["/usr/sbin/vsftpd"]

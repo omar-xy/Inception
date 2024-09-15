@@ -58,6 +58,21 @@ services:
     env_file:
       - .env
     restart: always
+  ftp:
+    build:
+      context: "./requirement/bonus/ftp"
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    volumes:
+      - wp_data:/var/www/html
+    depends_on:
+      - wordpress
+    networks:
+      - Inception
+    env_file:
+      - .env
+    restart: always
   redis:
     build:
       context: "./requirement/bonus/redis"
@@ -74,19 +89,9 @@ services:
     env_file:
       - .env
     restart: always
-  ftp:
-    build:
-      context: "./requirement/bonus/ftp"
-    networks:
-      - Inception
-    env_file:
-      - .env
-    restart: always
   static_website:
     build:
       context: "./requirement/bonus/static_website"
-    volumes:
-      - wp_data:/var/www/html
     networks:
       - Inception
     env_file:
