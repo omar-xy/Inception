@@ -20,9 +20,4 @@ server {
     location /adminer {
         proxy_pass http://adminer:8080;
     }
-
-    location /static-web {
-        root /var/www/html/ex03;
-        index copy.html;
-    }
 }
