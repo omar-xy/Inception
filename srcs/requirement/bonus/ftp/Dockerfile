@@ -2,14 +2,12 @@ FROM debian:buster
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y vsftpd
+    apt-get install -y vsftpd ftp
 
+COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 
-COPY  ./tools/init-ftp.sh /usr/local/bin
+COPY  ./tools/init-ftp.sh /
 
+RUN chmod +x /init-ftp.sh
 
-
-
-ENTRYPOINT [ "/usr/local/bin/init-ftp.sh" ]
-
-# CMD ["/usr/sbin/vsftpd"]
+ENTRYPOINT [ "./init-ftp.sh" ]
