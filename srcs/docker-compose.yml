@@ -5,17 +5,17 @@ networks:
 
 volumes:
   db_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: "/home/omar/Data/mariadbData"
-      o: bind
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: "/home/omar/Data/mariadbData"
+    #   o: bind
   wp_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: "/home/omar/Data/wordpressData"
-      o: bind
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: "/home/omar/Data/wordpressData"
+    #   o: bind
 
 services:
   nginx:
