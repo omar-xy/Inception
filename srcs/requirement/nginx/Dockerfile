@@ -12,9 +12,8 @@ RUN     apt update && apt -y install nginx \
         -subj="/O=42/C=MA/L=KHOURIBGA/CN=login.42.fr/UID=login"
 
 # copy the default configuration into the container
-COPY    ./default /etc/nginx/sites-available/default
-# RUN     chmod 755 /var/www/html
-# RUN     chown -R www-data:www-data /var/www/html
+COPY   ./conf/default /etc/nginx/sites-available/default
+
 
 EXPOSE 443
 

@@ -5,7 +5,7 @@ cd /var/www/html
 rm -rf *
 
 curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /bin/wp
- 
+
 wp core download --allow-root
 touch wp-config.php && chmod +x wp-config.php
 cp wp-config-sample.php wp-config.php
@@ -34,6 +34,5 @@ wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
 
 mkdir -p /run/php
-# php-fpm7.4 -F
-exec php-fpm7.4 -F
 
+exec php-fpm7.4 -F

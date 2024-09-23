@@ -127,4 +127,5 @@
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.env.osx": {},
     "terminal.integrated.env.linux": {},
+    "DockerRun.DisableAutoGenerateConfig": true,
 }
