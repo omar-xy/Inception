@@ -1,5 +1,4 @@
 
-
 networks:
   Inception:
 
@@ -8,13 +7,13 @@ volumes:
     # driver: local
     # driver_opts:
     #   type: none
-    #   device: "/home/omar/Data/mariadbData"
+    #   device: "/home/otaraki/Data/mariadbData"
     #   o: bind
   wp_data:
     # driver: local
     # driver_opts:
     #   type: none
-    #   device: "/home/omar/Data/wordpressData"
+    #   device: "/home/otaraki/Data/wordpressData"
     #   o: bind
 
 services:
