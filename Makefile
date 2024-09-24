@@ -12,7 +12,7 @@ upd:
 
 down: stop
 	docker compose -f ./srcs/docker-compose.yml down --rmi all  --volumes
-	# sudo rm -rf /home/otaraki/data/*
+# sudo rm -rf /home/otaraki/data/*
 
 stop:
 	docker compose -f ./srcs/docker-compose.yml stop
