@@ -20,6 +20,8 @@ services:
   nginx:
     build:
       context: "./requirement/nginx"
+    image: nginx:coolnginx
+    container_name: nginx
     depends_on:
       - wordpress
     volumes:
@@ -31,9 +33,12 @@ services:
     env_file:
       - .env
     restart: always
+
   wordpress:
     build:
       context: "./requirement/wordpress"
+    image: wordpress:coolwordpress
+    container_name: wordpress
     volumes:
       - wp_data:/var/www/html
     networks:
@@ -44,9 +49,12 @@ services:
     depends_on:
       - mariadb
       - redis
+
   mariadb:
     build:
       context: "./requirement/MariaDB"
+    image: mariadb:coolmariadb
+    container_name: mariadb
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -54,28 +62,37 @@ services:
     env_file:
       - .env
     restart: always
+
   redis:
     build:
       context: "./requirement/bonus/redis"
+    image: redis:coolredis
+    container_name: redis
     networks:
       - Inception
     env_file:
       - .env
     restart: always
+
   adminer:
     build:
       context: "./requirement/bonus/adminer"
+    image: adminer:cooladminer
+    container_name: adminer
     networks:
       - Inception
     env_file:
       - .env
     restart: always
+
   ftp:
     build:
       context: "./requirement/bonus/ftp"
+    image: ftp:coolftp
+    container_name: ftp
     ports:
       - "21:21"
-      - "21100-21110:21100-21110"
+      - "30000-30100:30000-30100"
     volumes:
       - wp_data:/var/www/html
     depends_on:
@@ -85,9 +102,12 @@ services:
     env_file:
       - .env
     restart: always
+
   static_website:
     build:
       context: "./requirement/bonus/static_website"
+    image: static_website:coolstatic_website
+    container_name: static_website
     ports:
       - "80:80"
     networks:
