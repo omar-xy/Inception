@@ -4,17 +4,17 @@ networks:
 
 volumes:
   db_data:
-#     driver: local
-#     driver_opts:
-#       type: none
-#       device: "/home/otaraki/data/wordpress"
-#       o: bind
+    driver: local
+    driver_opts:
+      type: none
+      device: "/home/otaraki/data/wordpress"
+      o: bind
   wp_data:
-#     driver: local
-#     driver_opts:
-#       type: none
-#       device: "/home/otaraki/data/mariadb"
-#       o: bind
+    driver: local
+    driver_opts:
+      type: none
+      device: "/home/otaraki/data/mariadb"
+      o: bind
 
 services:
   nginx:
