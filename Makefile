@@ -4,17 +4,17 @@ up:
 upd:
 	docker compose -f ./srcs/docker-compose.yml up --build -d
 
-dir:
-	@mkdir -p /home/otaraki/data
-	@mkdir -p /home/otaraki/data/wordpress
-	@chown -R otaraki:otaraki /home/otaraki/data/wordpress 
-	@mkdir -p /home/otaraki/data/mariadb
-	@chown -R otaraki:otaraki /home/otaraki/data/mariadb
+# dir:
+# 	@mkdir -p /home/otaraki/data
+# 	@mkdir -p /home/otaraki/data/wordpress
+# 	@chown -R otaraki:otaraki /home/otaraki/data/wordpress
+# 	@mkdir -p /home/otaraki/data/mariadb
+# 	@chown -R otaraki:otaraki /home/otaraki/data/mariadb
 
 
 down: stop
 	docker compose -f ./srcs/docker-compose.yml down --rmi all  --volumes
-	sudo rm -rf /home/otaraki/data/*
+#  sudo rm -rf /home/otaraki/data/*
 
 stop:
 	docker compose -f ./srcs/docker-compose.yml stop

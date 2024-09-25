@@ -4,17 +4,17 @@ networks:
 
 volumes:
   db_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: "/home/otaraki/data/wordpress"
-      o: bind
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: "/home/otaraki/data/wordpress"
+#       o: bind
   wp_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: "/home/otaraki/data/mariadb"
-      o: bind
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: "/home/otaraki/data/mariadb"
+#       o: bind
 
 services:
   nginx:
@@ -79,6 +79,8 @@ services:
       context: "./requirement/bonus/adminer"
     image: adminer:cooladminer
     container_name: adminer
+    ports:
+      - "9002:9002"
     networks:
       - Inception
     env_file:
@@ -92,7 +94,7 @@ services:
     container_name: ftp
     ports:
       - "21:21"
-      - "30000-30100:30000-30100"
+      - "30000-30001:30000-30001"
     volumes:
       - wp_data:/var/www/html
     depends_on:
@@ -110,6 +112,24 @@ services:
     container_name: static_website
     ports:
       - "80:80"
+    networks:
+      - Inception
+    env_file:
+      - .env
+    restart: always
+
+  cadvisor:
+    build:
+      context: "./requirement/bonus/cadvisor"
+    image: cadvisor:coolcadvisor
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - Inception
     env_file:
