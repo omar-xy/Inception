@@ -19,21 +19,6 @@ Inception is a **Web Development & System Administration** project that requires
 ✅ All services managed via **Docker Compose**  
 ✅ Custom **domain name** (e.g., `otaraki.42.fr`)
 
-## 📂 Project Structure
-
-Inception/
-│── srcs/
-│   ├── docker-compose.yml   # Service definitions
-│   ├── .env                 # Environment variables
-│   ├── requirements/        # Individual services
-│   │   ├── nginx/           # Nginx configuration & Dockerfile
-│   │   ├── mariadb/         # MariaDB setup & Dockerfile
-│   │   ├── wordpress/       # WordPress setup & Dockerfile
-│   │   ├── bonus/           # Optional services (Redis, FTP, etc.)
-│   └── secrets/             # Secure credentials (ignored in Git)
-│── Makefile                 # Automates setup & cleanup
-└── README.md                # Project documentation
-
 ## ⚙️ Mandatory Requirements
 - Each **service must run in its own container**.  
 - Containers must be built from **Alpine** or **Debian** (latest version is prohibited).  
