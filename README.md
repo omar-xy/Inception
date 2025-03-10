@@ -49,18 +49,18 @@ Create a `.env` file in the `srcs/` directory and add the following:
 DOMAIN_NAME=otaraki.42.fr
 
 # MariaDB Setup
-MYSQL_ROOT_PASSWORD=your_root_password
-MYSQL_DATABASE=wordpress
-MYSQL_USER=your_db_user
-MYSQL_PASSWORD=your_db_password
+- MYSQL_ROOT_PASSWORD=your_root_password
+- MYSQL_DATABASE=wordpress
+- MYSQL_USER=your_db_user
+- MYSQL_PASSWORD=your_db_password
 
 # WordPress Setup
-WP_ADMIN_USER=your_admin_user
-WP_ADMIN_PASSWORD=your_admin_password
-WP_ADMIN_EMAIL=your_email@example.com
-WP_USER=your_wp_user
-WP_USER_PASSWORD=your_wp_user_password
-WP_USER_EMAIL=your_wp_user_email@example.com
+- WP_ADMIN_USER=your_admin_user
+- WP_ADMIN_PASSWORD=your_admin_password
+- WP_ADMIN_EMAIL=your_email@example.com
+- WP_USER=your_wp_user
+- WP_USER_PASSWORD=your_wp_user_password
+- WP_USER_EMAIL=your_wp_user_email@example.com
 
 ## Build and Run
   -- make
